@@ -71,10 +71,16 @@ def run():
             sku_df[match_field] = sku_df[match_field].astype(str)
 
             
-            # Identify configurable rows but keep CatalogItemID in necessary_fields
-            configurable_mask = None
+            # # Identify configurable rows but keep CatalogItemID in necessary_fields
+            # configurable_mask = None
+            # if 'Product Type' in main_df.columns:
+            #  configurable_mask = main_df['Product Type'].str.lower() == 'configurable'
+            # Store configurable status before merge
+            main_df = main_df.copy()
             if 'Product Type' in main_df.columns:
-             configurable_mask = main_df['Product Type'].str.lower() == 'configurable'
+             main_df['_is_configurable'] = main_df['Product Type'].str.lower() == 'configurable'
+            else:
+             main_df['_is_configurable'] = False
 
 
             # SKU comparisons
@@ -110,9 +116,13 @@ def run():
             
              if col_main in merged_df.columns and col_sku in merged_df.columns:
                  # Handle CatalogItemID specially for configurable products
-                if field == 'CatalogItemID' and configurable_mask is not None:
-                    # Only validate NON-configurable rows for CatalogItemID
-                    temp_df = merged_df[~configurable_mask.reindex(merged_df.index, fill_value=False)]
+                # if field == 'CatalogItemID' and configurable_mask is not None:
+                #     # Only validate NON-configurable rows for CatalogItemID
+                #     temp_df = merged_df[~configurable_mask.reindex(merged_df.index, fill_value=False)]
+                # else:
+                #     temp_df = merged_df
+                if field == 'CatalogItemID':
+                    temp_df = merged_df[~merged_df['_is_configurable']]
                 else:
                     temp_df = merged_df
                 
