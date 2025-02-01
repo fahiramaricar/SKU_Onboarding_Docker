@@ -17,6 +17,15 @@ Handling Configurable Products**: The logic skips CatalogItemID validation for c
 def run():
     st.header("US SKU Validation")
     
+    ##st.set_page_config(layout="centered", toolbarMode="viewer")
+    # Add custom CSS to hide the GitHub icon
+    hide_github_icon = """
+    #GithubIcon {
+    visibility: hidden;
+    }
+    """
+    st.markdown(hide_github_icon, unsafe_allow_html=True)
+    
     # Define constants
     REQUIRED_ATTRIBUTES = [
         "CatalogItemID", "Family Id", "Import Family Id", "US Hierarchy Category V2", "Material Bank SKU",
