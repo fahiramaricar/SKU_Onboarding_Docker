@@ -149,6 +149,24 @@ def run():
 
         except Exception as e:
             st.error(f"Comparison error: {str(e)}")
+            
+    def check_primary_child_column(df):
+        """Check for empty values in Primary Child column and alert the user."""
+        if "Primary Child" in df.columns and "Material Bank SKU" in df.columns:
+            empty_primary_child = df[df["Primary Child"].isna()]
+
+            if not empty_primary_child.empty:
+                st.warning("⚠️ Empty values detected in 'Primary Child' column!")
+                st.write("To maintain uniformity, consider adding 'No' for non-primary child SKUs.")
+
+                # Convert 'Material Bank SKU' to string to prevent number formatting issues
+                empty_primary_child["Material Bank SKU"] = empty_primary_child["Material Bank SKU"].astype(str)
+                
+                st.dataframe(empty_primary_child[["Material Bank SKU", "Primary Child"]])
+                
+            else:
+                st.info("✅ No action needed! Primary Child field is populated.")
+
 
     # Streamlit UI Components
     st.subheader("File Uploads")
@@ -217,3 +235,7 @@ def run():
             # Field comparison
             st.write("### Field Value Comparison")
             review_field_values(main_df, sku_df, "Manufacturer Sku", NECESSARY_FIELDS)
+            
+            # Check for empty 'Primary Child' values
+            st.write("### Primary Child Column Check")
+            check_primary_child_column(main_df)
