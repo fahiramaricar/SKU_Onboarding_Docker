@@ -171,7 +171,7 @@ def run():
     # Streamlit UI Components
     st.subheader("File Uploads")
     
-    with st.expander("📋 **Upload Instructions (Click to Expand)**", expanded=True):
+    with st.expander("📋 **Upload Instructions (Click to Expand)**", expanded=False):
         st.markdown("""
         ### Essential Checks Before Uploading:
         
