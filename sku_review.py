@@ -4,6 +4,19 @@ from modules.new_sku_eu import run as run_eu
 from modules.stealth_sku import run as run_stealth
 
 def main():
+    
+    # CSS injection
+    st.markdown("""
+    <style>
+        [data-testid="stDecoration"], [data-testid="stHeader"], #MainMenu {
+            display: none;
+        }
+        .stApp {
+            margin-top: -75px;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    
     # Navigation Header
     col1, col2 = st.columns([4, 1])
     with col2:

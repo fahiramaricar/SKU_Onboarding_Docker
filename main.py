@@ -15,6 +15,25 @@ def main():
     if st.session_state.page == 'home':
         show_home_page()
     elif st.session_state.page == 'sku_review':
+        st.markdown("""
+            <style>
+                /* Hide GitHub icon */
+                [data-testid="stDecoration"] {
+                    display: none;
+                }
+                
+                /* Hide header */
+                [data-testid="stHeader"] {
+                    display: none;
+                }
+                
+                /* Hide menu button */
+                #MainMenu {
+                    visibility: hidden;
+                }
+            </style>
+            """, unsafe_allow_html=True)
+            
         import sku_review
         sku_review.main()
 
