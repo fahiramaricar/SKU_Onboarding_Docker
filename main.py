@@ -77,7 +77,7 @@ def show_home_page():
     </style>
     """, unsafe_allow_html=True)
 
-    st.markdown("<div class='hero'><h2>Welcome to SKU Management Portal</h2><p>Manage SKU onboarding, validation, and reviews in one place</p></div>", unsafe_allow_html=True)
+    st.markdown("<div class='hero'><h2>DataOps SKU Management Portal</h2><p>Manage SKU onboarding review and maintenance in one place</p></div>", unsafe_allow_html=True)
 
     # Dynamic layout for responsiveness
     cols = st.columns([1, 1, 1])  # Ensures buttons are evenly distributed
@@ -88,10 +88,9 @@ def show_home_page():
             st.rerun()
 
     with cols[1]:
-        st.button("🛠️ Maintenance", disabled=True)
+        st.button("🛠️ SKU Maintenance (Coming Soon)", disabled=True)
 
-    with cols[2]:
-        st.button("⚙️ Settings (Coming Soon)", disabled=True)
+    
 
     # Footer
     st.markdown("---")
