@@ -74,6 +74,12 @@ def show_home_page():
             height: 45px;
         }
     }
+    
+    </style>
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
     </style>
     """, unsafe_allow_html=True)
 
