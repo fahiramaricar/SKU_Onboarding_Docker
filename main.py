@@ -95,6 +95,9 @@ def show_home_page():
 
     with cols[1]:
         st.button("🛠️ SKU Maintenance (Coming Soon)", disabled=True)
+        
+    with cols[2]:
+        st.button("🔍 Review AC Fields (Coming Soon)", disabled=True)
 
     
 
