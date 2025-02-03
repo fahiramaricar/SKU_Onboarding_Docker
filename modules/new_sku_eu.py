@@ -130,6 +130,7 @@ def run():
             st.markdown("""
             - Indoor & Outdoor
             - Product Name
+            - Manufacturer Sku EU
             """)
         
         st.markdown("""
@@ -143,7 +144,7 @@ def run():
         |---------------|-----------|
         | Updated Product Name | Product Name |
         | Updated Color Name | Color Name |
-        | Updated Manufacturer Sku | Manufacturer Sku |
+        | Updated Manufacturer Sku EU| Manufacturer Sku EU|
         """, unsafe_allow_html=True)
         
         st.markdown("---")
