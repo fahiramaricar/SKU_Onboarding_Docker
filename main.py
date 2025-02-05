@@ -31,6 +31,14 @@ def main():
                 #MainMenu {
                     visibility: hidden;
                 }
+                
+                footer {
+                    visibility: hidden;
+                }
+                
+                ._profileContainer_gzau3_53 {
+                    display: none !important;
+                }
             </style>
             """, unsafe_allow_html=True)
             
@@ -75,19 +83,12 @@ def show_home_page():
         }
     }
     
-    /* Hide GitHub icon */
-    [data-testid="stDecoration"] {
-        display: none;
-    }
-                
-    /* Hide header */
-    [data-testid="stHeader"] {
-        display: none;
-    }
-                
-    /* Hide menu button */
-    #MainMenu {
+    footer {
         visibility: hidden;
+    }
+    
+    ._profileContainer_gzau3_53 {
+        display: none !important;
     }
     
     </style>
