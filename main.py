@@ -32,11 +32,7 @@ def main():
                     visibility: hidden;
                 }
                 
-                footer {
-                    visibility: hidden;
-                }
-                
-                ._profileContainer_gzau3_53 {
+                div[class^="_profileContainer"] {
                     display: none !important;
                 }
             </style>
@@ -83,11 +79,7 @@ def show_home_page():
         }
     }
     
-    footer {
-        visibility: hidden;
-    }
-    
-    ._profileContainer_gzau3_53 {
+    div[class^="_profileContainer"] {
         display: none !important;
     }
     
