@@ -31,10 +31,7 @@ def main():
                 #MainMenu {
                     visibility: hidden;
                 }
-                
-                div[class^="_profileContainer"] {
-                    display: none !important;
-                }
+
             </style>
             """, unsafe_allow_html=True)
             
@@ -77,10 +74,6 @@ def show_home_page():
             font-size: 1rem;
             height: 45px;
         }
-    }
-    
-    div[class^="_profileContainer"] {
-        display: none !important;
     }
     
     </style>
