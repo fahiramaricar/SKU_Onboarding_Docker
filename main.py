@@ -75,11 +75,21 @@ def show_home_page():
         }
     }
     
-    </style>
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    /* Hide GitHub icon */
+    [data-testid="stDecoration"] {
+        display: none;
+    }
+                
+    /* Hide header */
+    [data-testid="stHeader"] {
+        display: none;
+    }
+                
+    /* Hide menu button */
+    #MainMenu {
+        visibility: hidden;
+    }
+    
     </style>
     """, unsafe_allow_html=True)
 
