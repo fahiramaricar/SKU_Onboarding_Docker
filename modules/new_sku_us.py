@@ -329,15 +329,15 @@ def run():
 
         if main_df is not None and sku_df is not None:
             # 1. Attribute check
-            st.write("### Required Attributes Check")
+            st.write("#### Required Attributes Check")
             check_attributes_in_excel(main_df, REQUIRED_ATTRIBUTES)
 
             # 2. Field comparison
-            st.write("### Field Value Comparison")
+            st.write("#### Field Value Comparison")
             review_field_values(main_df, sku_df, "Manufacturer Sku", NECESSARY_FIELDS)
             
             # 3. Expected Values Check (NEW)
-            st.write("### Expected Values Validation")
+            st.write("#### Expected Values Validation")
             value_errors = check_expected_values(main_df, EXPECTED_VALUES)
             
             if not value_errors:
@@ -350,10 +350,11 @@ def run():
                         st.dataframe(details['invalid_entries'])
             
             # 4. Check for empty 'Primary Child' values
-            st.write("### Primary Child Column Check")
+            st.write("#### Primary Child Column Check")
             check_primary_child_column(main_df)
             
             # 5. State Permission validation
+            st.write("#### State Permission Check")
             try:
                 state_brands = load_state_permission_brands()
                 # First check if Manufacturer column exists
