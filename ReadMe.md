@@ -24,9 +24,12 @@ newgrp docker
 ```bash
 git clone https://github.com/fahiramaricar/SKU_Onboarding_Docker.git
 ```
+```
+docker login -u fahimaricar
+```
 
 ```bash
-docker build -t entbappy/stapp:latest . 
+docker build -t fahimaricar/skuapp:latest . 
 ```
 
 ```bash
@@ -34,8 +37,17 @@ docker images -a
 ```
 
 ```bash
-docker run -d -p 8501:8501 entbappy/stapp 
+docker run -d -p 8501:8501 fahimaricar/skuapp 
 ```
+
+
+
+
+
+Additional Debugging:
+
+
+
 
 ```bash
 docker ps  
@@ -54,15 +66,15 @@ docker login
 ```
 
 ```bash
-docker push entbappy/stapp:latest 
+docker push fahimaricar/skuapp:latest 
 ```
 
 ```bash
-docker rmi entbappy/stapp:latest
+docker rmi fahimaricar/skuapp:latest
 ```
 
 ```bash
-docker pull entbappy/stapp
+docker pull fahimaricar/skuapp
 ```
 
 
