@@ -22,7 +22,7 @@ newgrp docker
 ```
 
 ```bash
-git clone "your-project"
+git clone https://github.com/fahiramaricar/SKU_Onboarding_Docker.git
 ```
 
 ```bash
