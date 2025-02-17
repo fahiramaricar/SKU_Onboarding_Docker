@@ -76,8 +76,55 @@ docker rmi fahimaricar/skuapp:latest
 ```bash
 docker pull fahimaricar/skuapp
 ```
+## 3. Alternatively create docker image locally, push to dockerhub and then launch EC2  instance 
+Run the following command in windows WSL to push the local docker image to dockerhub
+```bash
+sudo apt-get update -y
 
+sudo apt-get upgrade
 
+#Install Docker
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker fahira (Ubuntu username)
+
+newgrp docker
+```
+Then continue the same procedure as other approach
+To troubleshoot docker image built issue:
+
+```bash
+sudo service docker status
+
+```
+```bash
+docker push fahimaricar/skuapp:latest 
+```
+To pull the image in the instance, connect the instance and run the following commands
+
+```bash
+#Install Docker
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+```bash
+docker login -u fahimaricar
+```
+```bash
+docker pull fahimaricar/skuapp
+```
+```bash
+docker run -d -p 8501:8501 fahimaricar/skuapp 
+```
 
 
 
